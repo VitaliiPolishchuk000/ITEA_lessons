@@ -1,0 +1,7 @@
+version: "Apple Swift version 5.2 (swiftlang-1103.0.32.1 clang-1103.0.32.29)"
+options: "cceab0e84f8e33d24db6b1947ab52911"
+build_time: [1588000203, 212206000]
+inputs:
+  "/Users/vitalii/Documents/GitHub/ITEA_lessons/Hello World/Hello Word/ViewController.swift": [1587751572, 587159872]
+  "/Users/vitalii/Documents/GitHub/ITEA_lessons/Hello World/Hello Word/AppDelegate.swift": [1587741767, 117226362]
+  "/Users/vitalii/Documents/GitHub/ITEA_lessons/Hello World/Hello Word/SceneDelegate.swift": [1587741767, 126069307]
