@@ -30,6 +30,10 @@ class Students {
     class DeductionStudents : Students {
         
         var status: StudentStatus
+        var fullname: String {
+            return name + " " + surname
+        }
+        
         
         init(name: String, surname: String, phone: UInt, age: Int, picture: UIImage, email: String, status: StudentStatus) {
             
@@ -44,8 +48,8 @@ class Students {
     }
 
 
-func createStArray () -> [Students] {
-    var studentsArray = [Students]()
+func createStArray () -> [DeductionStudents] {
+    var studentsArray = [DeductionStudents]()
     studentsArray.append(DeductionStudents(name: "Vasiliy", surname: "Petrov", phone: 23355, age: 22, picture: UIImage(named: "student1")!, email: "vasiliypetrov@email.com", status: .Study))
     studentsArray.append(DeductionStudents(name: "Ivan", surname: "Popov", phone: 45563, age: 23, picture: UIImage(named: "student2")!, email: "ivanpopov@email.com", status: .Study))
     studentsArray.append(DeductionStudents(name: "Potap", surname: "Kotov", phone: 83324, age: 20, picture: UIImage(named: "student3")!, email: "potapkotov@email.com", status: .Study))
