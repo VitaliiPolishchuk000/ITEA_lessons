@@ -10,20 +10,19 @@ import UIKit
 
 class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
-    
 //  MARK: - IBOutlets
     @IBOutlet weak var myTableView: UITableView!
     @IBOutlet weak var myCollectionView: UICollectionView!
     
+//MARK: - Properties:
     
+    let matches = matchesResults()
     
 // MARK: - Initializers
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
         
-        
-      
         myTableView.delegate = self
         myTableView.dataSource = self
           myTableView.register(UINib(nibName: String(describing: CustomTableViewCell.self), bundle: nil), forCellReuseIdentifier: "customCell")
@@ -37,31 +36,28 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         myCollectionView.dataSource = self
         myCollectionView.register(UINib(nibName: String(describing: CustomCollectionViewCell.self), bundle: nil), forCellWithReuseIdentifier: "customCollectionCell")
         
-        
-        
-        
-
     }
 
 //MARK: - Table View Data Source
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 10
+        return countOfGames()
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        
         let cell = tableView.dequeueReusableCell(withIdentifier: "customCell") as! CustomTableViewCell
+       
+        cell.firstTeamImage.image? = UIImage.init(named: matches[indexPath.row].teamImage1)!
+            cell.secondTeamImage.image? = UIImage.init(named: matches[indexPath.row].teamImage2)!
+            cell.firstTeamScoreLabel.text? = String(matches[indexPath.row].teamCount1)
+            cell.secondTeamScoreLable.text? = String(matches[indexPath.row].teamCount2)
         
-        cell.firstTeamImage.image? = UIImage.init(named: randomPicture().0)! // don't work without default picture
-        cell.secondTeamImage.image? = UIImage.init(named: randomPicture().1)!
-        cell.firstTeamScoreLabel.text? = randomScore()
-        cell.secondTeamScoreLable.text? = randomScore()
+    return cell
         
-        return cell
     }
 
 }
-
 
 //MARK: - Collection View Delegate
 

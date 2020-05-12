@@ -15,7 +15,6 @@ class CustomCollectionViewCell: UICollectionViewCell {
     @IBOutlet weak var thridCollImage: UIImageView!
     @IBOutlet weak var fourthCollImage: UIImageView!
     
-    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
