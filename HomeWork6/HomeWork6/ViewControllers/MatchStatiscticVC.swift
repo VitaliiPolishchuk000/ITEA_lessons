@@ -38,18 +38,20 @@ class MatchStatisticVC: UIViewController, UITableViewDelegate, UITableViewDataSo
         
         for _ in 1..<(match.teamCount1 + 1) {
             
-            goal.append(MatchGoals(firstTeamGoals: "firstTeamPlayer", secondTeamGoals: "_"))
+            goal.append(MatchGoals(firstTeamGoals: "firstTeamPlayer", secondTeamGoals: "-"))
             
         }
         
         for _ in 1..<(match.teamCount2 + 1) {
             
-            goal.append(MatchGoals(firstTeamGoals: "_", secondTeamGoals: "secondTeamPlayer"))
+            goal.append(MatchGoals(firstTeamGoals: "-", secondTeamGoals: "secondTeamPlayer"))
             
         }
                 
-        return goal
+        return goal             //shuffled broke logic
     }
+    
+    
     
     //    MARK: - UITableViewDataSource
     

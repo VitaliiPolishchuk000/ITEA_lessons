@@ -58,7 +58,7 @@
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                             </tableView>
                         </subviews>
-                        <color key="backgroundColor" systemColor="systemBlueColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="backgroundColor" systemColor="systemGray5Color" red="0.8980392157" green="0.8980392157" blue="0.91764705879999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="ZGb-zy-UB0" firstAttribute="top" secondItem="JjL-ai-tQA" secondAttribute="bottom" constant="50" id="13F-XI-IRA"/>
                             <constraint firstItem="lvN-k7-pQc" firstAttribute="bottom" secondItem="ZGb-zy-UB0" secondAttribute="bottom" id="8Y6-H0-4Dv"/>
