@@ -9,6 +9,11 @@
 import UIKit
 import CoreData
 
+protocol AddNewSubscriberDelegate {
+    func saveNewSubscriber(name: String, surname: String, email: String, adress: String, number: String)
+
+}
+
 class AddSubscriberVC: UIViewController {
     
     @IBOutlet weak var nameTextField: UITextField!
@@ -18,36 +23,25 @@ class AddSubscriberVC: UIViewController {
     @IBOutlet weak var adressTextField: UITextField!
     @IBOutlet weak var saveButton: UIButton!
     
+    var delegate: AddNewSubscriberDelegate?
+    
     override func viewDidLoad() {
-    super.viewDidLoad()
+        super.viewDidLoad()
         
     }
-    
-//    override func viewWillAppear(_ animated: Bool) {
-//      super.viewWillAppear(animated)
-//
-//      guard let appDelegate =
-//        UIApplication.shared.delegate as? AppDelegate else {
-//          return
-//      }
-//
-//      let managedContext = appDelegate.persistentContainer.viewContext
-//
-//      let fetchRequest = NSFetchRequest<NSManagedObject>(entityName: "Subscriber")
-//
-//      do {
-//        subscribers = try managedContext.fetch(fetchRequest)
-//      } catch let error as NSError {
-//        print("Could not fetch. \(error), \(error.userInfo)")
-//      }
-//    }
-    
+
+    func onBack () {
+        self.navigationController?.popViewController(animated: false)
+    }
     
     
     @IBAction func addSubscriber(_ sender: Any) {
-    
-//        save(name: nameTextField.text!, surname: surnameTextField.text!,  email: emailTextField.text!, adress: adressTextField.text!, number: numberTextField.text!)
         
+        if let delegate = delegate {
+        
+        delegate.saveNewSubscriber(name: nameTextField.text!, surname: surnameTextField.text!,  email: emailTextField.text!, adress: adressTextField.text!, number: numberTextField.text!)
+        onBack()
+        }
     }
 }
 
