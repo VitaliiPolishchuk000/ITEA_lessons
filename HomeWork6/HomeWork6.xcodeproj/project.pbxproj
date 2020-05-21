@@ -16,9 +16,9 @@
 		FA479CB2246AF259002EF166 /* Matches.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA479CB1246AF259002EF166 /* Matches.swift */; };
 		FA479CB7246AFAB9002EF166 /* MatchTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA479CB5246AFAB9002EF166 /* MatchTableViewCell.swift */; };
 		FA479CB8246AFAB9002EF166 /* MatchTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FA479CB6246AFAB9002EF166 /* MatchTableViewCell.xib */; };
-		FA4B47C7246B1BFF00449488 /* MatchStatiscticVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA4B47C6246B1BFF00449488 /* MatchStatiscticVC.swift */; };
 		FA4B47CA246D67AF00449488 /* MatchStatTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA4B47C8246D67AF00449488 /* MatchStatTableViewCell.swift */; };
 		FA4B47CB246D67AF00449488 /* MatchStatTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FA4B47C9246D67AF00449488 /* MatchStatTableViewCell.xib */; };
+		FABDFEB52476842C004DF4E3 /* MatchStatiscticVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = FABDFEB42476842C004DF4E3 /* MatchStatiscticVC.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -33,9 +33,9 @@
 		FA479CB1246AF259002EF166 /* Matches.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Matches.swift; sourceTree = "<group>"; };
 		FA479CB5246AFAB9002EF166 /* MatchTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatchTableViewCell.swift; sourceTree = "<group>"; };
 		FA479CB6246AFAB9002EF166 /* MatchTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MatchTableViewCell.xib; sourceTree = "<group>"; };
-		FA4B47C6246B1BFF00449488 /* MatchStatiscticVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatchStatiscticVC.swift; sourceTree = "<group>"; };
 		FA4B47C8246D67AF00449488 /* MatchStatTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatchStatTableViewCell.swift; sourceTree = "<group>"; };
 		FA4B47C9246D67AF00449488 /* MatchStatTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MatchStatTableViewCell.xib; sourceTree = "<group>"; };
+		FABDFEB42476842C004DF4E3 /* MatchStatiscticVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MatchStatiscticVC.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -70,9 +70,9 @@
 			children = (
 				FA479CB3246AF333002EF166 /* Models */,
 				FA479CB4246AF359002EF166 /* ViewControllers */,
+				FA479CB9246AFAE3002EF166 /* TableViewCell */,
 				FA479C9D246AF109002EF166 /* AppDelegate.swift */,
 				FA479C9F246AF109002EF166 /* SceneDelegate.swift */,
-				FA479CB9246AFAE3002EF166 /* TableViewCell */,
 				FA479CA3246AF109002EF166 /* Main.storyboard */,
 				FA479CA6246AF10B002EF166 /* Assets.xcassets */,
 				FA479CA8246AF10B002EF166 /* LaunchScreen.storyboard */,
@@ -93,7 +93,7 @@
 			isa = PBXGroup;
 			children = (
 				FA479CA1246AF109002EF166 /* ViewController.swift */,
-				FA4B47C6246B1BFF00449488 /* MatchStatiscticVC.swift */,
+				FABDFEB42476842C004DF4E3 /* MatchStatiscticVC.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -185,8 +185,8 @@
 				FA4B47CA246D67AF00449488 /* MatchStatTableViewCell.swift in Sources */,
 				FA479CA2246AF109002EF166 /* ViewController.swift in Sources */,
 				FA479CB2246AF259002EF166 /* Matches.swift in Sources */,
+				FABDFEB52476842C004DF4E3 /* MatchStatiscticVC.swift in Sources */,
 				FA479CB7246AFAB9002EF166 /* MatchTableViewCell.swift in Sources */,
-				FA4B47C7246B1BFF00449488 /* MatchStatiscticVC.swift in Sources */,
 				FA479C9E246AF109002EF166 /* AppDelegate.swift in Sources */,
 				FA479CA0246AF109002EF166 /* SceneDelegate.swift in Sources */,
 			);

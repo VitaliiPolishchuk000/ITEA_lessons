@@ -1,17 +1,15 @@
 //
-//  ViewController.swift
-//  HomeWork6
+//  FirstViewController.swift
+//  HomeWork8
 //
-//  Created by Vitalii on 12.05.2020.
+//  Created by Vitalii on 21.05.2020.
 //  Copyright © 2020 Vitalii Polishchuk. All rights reserved.
 //
 
 import UIKit
 
-
-
-class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
-   
+class FirstViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+      
     @IBOutlet weak var matchTableView: UITableView!
     
     var matches = matchesResults()
