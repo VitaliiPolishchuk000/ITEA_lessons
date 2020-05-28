@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CLIENT_ID</key>
+	<string>954561071302-krn3o3s3v4nkieq0ot1haaq6nl3v7ssu.apps.googleusercontent.com</string>
+	<key>REVERSED_CLIENT_ID</key>
+	<string>com.googleusercontent.apps.954561071302-krn3o3s3v4nkieq0ot1haaq6nl3v7ssu</string>
+	<key>API_KEY</key>
+	<string>AIzaSyC0PCZv3w_8ZDu5sM3V6M-u50SpDxvtB6o</string>
+	<key>GCM_SENDER_ID</key>
+	<string>954561071302</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>ITEALessons.HomeWork9</string>
+	<key>PROJECT_ID</key>
+	<string>homework9part1</string>
+	<key>STORAGE_BUCKET</key>
+	<string>homework9part1.appspot.com</string>
+	<key>IS_ADS_ENABLED</key>
+	<false></false>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false></false>
+	<key>IS_APPINVITE_ENABLED</key>
+	<true></true>
+	<key>IS_GCM_ENABLED</key>
+	<true></true>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true></true>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:954561071302:ios:05a56237118a933de76fc7</string>
+	<key>DATABASE_URL</key>
+	<string>https://homework9part1.firebaseio.com</string>
+</dict>
+</plist>
