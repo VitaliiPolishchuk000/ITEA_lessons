@@ -10,7 +10,7 @@ target 'HomeWork9' do
 
   # Pods for HomeWork9
   pod 'Firebase/Auth'
-  pod 'FacebookCore'
-  pod 'FacebookLogin'
+  pod 'FBSDKLoginKit'
+  pod 'GoogleSignIn'
 
 end

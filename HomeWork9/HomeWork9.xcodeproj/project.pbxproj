@@ -19,6 +19,11 @@
 		FABDFFA424781145004DF4E3 /* FirebaseAuthManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = FABDFFA324781145004DF4E3 /* FirebaseAuthManager.swift */; };
 		FABDFFA824781240004DF4E3 /* LogInVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = FABDFFA724781240004DF4E3 /* LogInVC.swift */; };
 		FABDFFAA24781293004DF4E3 /* SignUpVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = FABDFFA924781293004DF4E3 /* SignUpVC.swift */; };
+		FAD7497A24814EF20028697B /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = FAD7497924814EF20028697B /* Default-568h@2x.png */; };
+		FAD7497C248150F70028697B /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAD7497B248150F70028697B /* User.swift */; };
+		FAD7497E248151A40028697B /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAD7497D248151A40028697B /* Constants.swift */; };
+		FADDDA2F2482D93E00478888 /* ForgotPassVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = FADDDA2E2482D93E00478888 /* ForgotPassVC.swift */; };
+		FADDDA372482DC8200478888 /* Utilites.swift in Sources */ = {isa = PBXBuildFile; fileRef = FADDDA362482DC8200478888 /* Utilites.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -38,6 +43,11 @@
 		FABDFFA324781145004DF4E3 /* FirebaseAuthManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseAuthManager.swift; sourceTree = "<group>"; };
 		FABDFFA724781240004DF4E3 /* LogInVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogInVC.swift; sourceTree = "<group>"; };
 		FABDFFA924781293004DF4E3 /* SignUpVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpVC.swift; sourceTree = "<group>"; };
+		FAD7497924814EF20028697B /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
+		FAD7497B248150F70028697B /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		FAD7497D248151A40028697B /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		FADDDA2E2482D93E00478888 /* ForgotPassVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgotPassVC.swift; sourceTree = "<group>"; };
+		FADDDA362482DC8200478888 /* Utilites.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utilites.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -72,6 +82,7 @@
 		FABDFF7D24780AFE004DF4E3 = {
 			isa = PBXGroup;
 			children = (
+				FAD7497924814EF20028697B /* Default-568h@2x.png */,
 				FABDFF8824780AFE004DF4E3 /* HomeWork9 */,
 				FABDFF8724780AFE004DF4E3 /* Products */,
 				2F46DF8F3063D1F36F3F576A /* Pods */,
@@ -91,15 +102,14 @@
 			isa = PBXGroup;
 			children = (
 				FABDFFA6247811F2004DF4E3 /* ViewControllers */,
+				FADDDA332482DBA300478888 /* Delegate */,
+				FADDDA322482DB8A00478888 /* Storyboards */,
+				FADDDA312482DB7400478888 /* Models */,
 				FABDFFA224781131004DF4E3 /* Firebase */,
-				FABDFF8924780AFE004DF4E3 /* AppDelegate.swift */,
-				FABDFF8B24780AFE004DF4E3 /* SceneDelegate.swift */,
-				FABDFF8F24780AFE004DF4E3 /* Main.storyboard */,
-				FABDFF9524780B01004DF4E3 /* Assets.xcassets */,
-				FABDFF9724780B01004DF4E3 /* LaunchScreen.storyboard */,
-				FABDFF9A24780B01004DF4E3 /* Info.plist */,
+				FADDDA352482DC2000478888 /* Resources */,
+				FADDDA302482DB5700478888 /* Plist */,
+				FADDDA342482DBEF00478888 /* CoreData */,
 				FABDFFA024780B6B004DF4E3 /* GoogleService-Info.plist */,
-				FABDFF9224780AFE004DF4E3 /* HomeWork9.xcdatamodeld */,
 			);
 			path = HomeWork9;
 			sourceTree = "<group>";
@@ -118,8 +128,61 @@
 				FABDFFA724781240004DF4E3 /* LogInVC.swift */,
 				FABDFFA924781293004DF4E3 /* SignUpVC.swift */,
 				FABDFF8D24780AFE004DF4E3 /* MainVC.swift */,
+				FADDDA2E2482D93E00478888 /* ForgotPassVC.swift */,
 			);
 			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		FADDDA302482DB5700478888 /* Plist */ = {
+			isa = PBXGroup;
+			children = (
+				FABDFF9A24780B01004DF4E3 /* Info.plist */,
+			);
+			path = Plist;
+			sourceTree = "<group>";
+		};
+		FADDDA312482DB7400478888 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				FAD7497B248150F70028697B /* User.swift */,
+				FAD7497D248151A40028697B /* Constants.swift */,
+				FADDDA362482DC8200478888 /* Utilites.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		FADDDA322482DB8A00478888 /* Storyboards */ = {
+			isa = PBXGroup;
+			children = (
+				FABDFF8F24780AFE004DF4E3 /* Main.storyboard */,
+				FABDFF9724780B01004DF4E3 /* LaunchScreen.storyboard */,
+			);
+			path = Storyboards;
+			sourceTree = "<group>";
+		};
+		FADDDA332482DBA300478888 /* Delegate */ = {
+			isa = PBXGroup;
+			children = (
+				FABDFF8924780AFE004DF4E3 /* AppDelegate.swift */,
+				FABDFF8B24780AFE004DF4E3 /* SceneDelegate.swift */,
+			);
+			path = Delegate;
+			sourceTree = "<group>";
+		};
+		FADDDA342482DBEF00478888 /* CoreData */ = {
+			isa = PBXGroup;
+			children = (
+				FABDFF9224780AFE004DF4E3 /* HomeWork9.xcdatamodeld */,
+			);
+			path = CoreData;
+			sourceTree = "<group>";
+		};
+		FADDDA352482DC2000478888 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				FABDFF9524780B01004DF4E3 /* Assets.xcassets */,
+			);
+			path = Resources;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -134,6 +197,7 @@
 				FABDFF8324780AFE004DF4E3 /* Frameworks */,
 				FABDFF8424780AFE004DF4E3 /* Resources */,
 				62E577B1D83BBC9F6960B60E /* [CP] Embed Pods Frameworks */,
+				5598513CE95BB8EF01CF5B71 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -185,6 +249,7 @@
 				FABDFF9924780B01004DF4E3 /* LaunchScreen.storyboard in Resources */,
 				FABDFF9624780B01004DF4E3 /* Assets.xcassets in Resources */,
 				FABDFFA124780B6B004DF4E3 /* GoogleService-Info.plist in Resources */,
+				FAD7497A24814EF20028697B /* Default-568h@2x.png in Resources */,
 				FABDFF9124780AFE004DF4E3 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -192,6 +257,23 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		5598513CE95BB8EF01CF5B71 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-HomeWork9/Pods-HomeWork9-resources-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-HomeWork9/Pods-HomeWork9-resources-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-HomeWork9/Pods-HomeWork9-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 		62E577B1D83BBC9F6960B60E /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -242,9 +324,13 @@
 				FABDFFA424781145004DF4E3 /* FirebaseAuthManager.swift in Sources */,
 				FABDFF8E24780AFE004DF4E3 /* MainVC.swift in Sources */,
 				FABDFFA824781240004DF4E3 /* LogInVC.swift in Sources */,
+				FADDDA372482DC8200478888 /* Utilites.swift in Sources */,
+				FADDDA2F2482D93E00478888 /* ForgotPassVC.swift in Sources */,
 				FABDFF8A24780AFE004DF4E3 /* AppDelegate.swift in Sources */,
+				FAD7497C248150F70028697B /* User.swift in Sources */,
 				FABDFF8C24780AFE004DF4E3 /* SceneDelegate.swift in Sources */,
 				FABDFF9424780AFE004DF4E3 /* HomeWork9.xcdatamodeld in Sources */,
+				FAD7497E248151A40028697B /* Constants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -391,7 +477,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 7N9NLX8536;
-				INFOPLIST_FILE = HomeWork9/Info.plist;
+				INFOPLIST_FILE = "$(SRCROOT)/HomeWork9/Plist/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -410,7 +496,8 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 7N9NLX8536;
-				INFOPLIST_FILE = HomeWork9/Info.plist;
+				INFOPLIST_FILE = "$(SRCROOT)/HomeWork9/Plist/Info.plist";
+				"INFOPLIST_FILE[sdk=*]" = "$(SRCROOT)/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

@@ -10,49 +10,45 @@ import FBSDKCoreKit
 import FBSDKLoginKit
 import FirebaseAuth
 import UIKit
+import GoogleSignIn
 
 class LogInVC: UIViewController {
 
     @IBOutlet weak var loginTextField: UITextField!
     @IBOutlet weak var passwordTextField: UITextField!
+    @IBOutlet weak var signInButton: GIDSignInButton!
+    @IBOutlet weak var faceBookLoginButton: FBLoginButton!
+    
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         loginTextField.delegate = self
         passwordTextField.delegate = self
-
         
+        faceBookLoginButton.delegate = self
+        
+        GIDSignIn.sharedInstance()?.presentingViewController = self
         
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
-        self.performSegue(withIdentifier: "logInSegue", sender: nil)
-
-        let defaults = UserDefaults.standard
-        if defaults.string(forKey: "isAuthorizedKey") == "true" {
-
-            self.performSegue(withIdentifier: "logInSegue", sender: nil)
-
-        }
+//        self.performSegue(withIdentifier: "logInSegue", sender: nil)
+//
+//        let defaults = UserDefaults.standard
+//        if defaults.string(forKey: "isAuthorizedKey") == "true" {
+//
+//            self.performSegue(withIdentifier: "logInSegue", sender: nil)
+//
+//        }
     }
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         self.view.endEditing(true)
     }
-    
-//    func isValidInputEmail () -> Bool {
-//        let emailRegEx = "[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,64}"
-//        let emailPredicate = NSPredicate(format:"SELF MATCHES %@", emailRegEx)
-//        return emailPredicate.evaluate(with: loginTextField.text)
-//    }
-//
-//    func isValidPass() -> Bool {
-//        guard let pass = passwordTextField.text else { return false }
-//        return pass.count > 5
-//    }
     
     func showPopup(isSuccess: Bool) {
         
@@ -63,10 +59,9 @@ class LogInVC: UIViewController {
         
         let action = isSuccess ? (UIAlertAction(title: "Done", style: UIAlertAction.Style.default) { _ in
             
-            let defaults = UserDefaults.standard
-            defaults.set(true, forKey:"isAuthorizedKey")
-            defaults.synchronize()
-            
+            if let user = Auth.auth().currentUser?.uid {
+                User.setCurrent(User.init(userId: user), writeToUserDefaults: true)
+            }
             self.performSegue(withIdentifier: "logInSegue", sender: nil)
             
         }) : (UIAlertAction(title: "Done", style: UIAlertAction.Style.default, handler: nil))
@@ -74,25 +69,6 @@ class LogInVC: UIViewController {
       alert.addAction(action)
         self.display(alertController: alert)
     }
-    
-//    @objc func didTapFacebookButton() {
-//      let loginManager = LoginManager()
-//      loginManager.logIn(permissions: ["email"], from: self) { (result, error) in
-//        if error != nil {
-//          self.showPopup(isSuccess: false)
-//          return
-//        }
-//        guard let token = AccessToken.current else {
-//          print("Failed to get access token")
-//          self.showPopup(isSuccess: false)
-//          return
-//        }
-//
-//        FirebaseAuthManager().login(credential: FacebookAuthProvider.credential(withAccessToken: token.tokenString)) {[weak self] (success) in
-//          self?.showPopup(isSuccess: true)
-//        }
-//      }
-//    }
     
     @objc func didTapLoginButton() {
         let loginManager = FirebaseAuthManager()
@@ -105,11 +81,6 @@ class LogInVC: UIViewController {
     func display(alertController: UIAlertController) {
         self.present(alertController, animated: true, completion: nil)
     }
-    
-    @IBAction func facebookSingInAction(_ sender: Any) {
-//        didTapFacebookButton()
-    }
-    
     
     @IBAction func signInAction(_ sender: Any) {
         didTapLoginButton()
@@ -126,4 +97,40 @@ extension LogInVC: UITextFieldDelegate {
         }
         return true
     }
+}
+
+extension LogInVC: LoginButtonDelegate {
+    
+    func loginButton(_ loginButton: FBLoginButton, didCompleteWith result: LoginManagerLoginResult?, error: Error?) {
+        if let error = error {
+          print(error.localizedDescription)
+          return
+        }
+        
+        guard result!.isCancelled == false else { return }
+        
+        let credential = FacebookAuthProvider.credential(withAccessToken: AccessToken.current!.tokenString)
+        
+        
+        Auth.auth().signIn(with: credential) { (authResult, error) in
+            if let error = error {
+                print(error.localizedDescription)
+                return
+            }
+            
+            let window = UIApplication.shared.windows.filter({$0.isKeyWindow}).first
+            window?.rootViewController?.performSegue(withIdentifier: "logInSegue", sender: nil)
+        }
+    }
+    
+    func loginButtonDidLogOut(_ loginButton: FBLoginButton) {
+        
+            let firebaseAuth = Auth.auth()
+        do {
+          try firebaseAuth.signOut()
+        } catch let signOutError as NSError {
+          print ("Error signing out: %@", signOutError)
+        }
+    }
+    
 }

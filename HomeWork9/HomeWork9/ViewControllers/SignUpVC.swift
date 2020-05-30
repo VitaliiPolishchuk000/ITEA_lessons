@@ -26,22 +26,9 @@ class SignUpVC: UIViewController {
         self.view.endEditing(true)
     }
     
-    func isValidInputEmail () -> Bool {
-        let emailRegEx = "[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,64}"
-        let emailPredicate = NSPredicate(format:"SELF MATCHES %@", emailRegEx)
-        return emailPredicate.evaluate(with: emailRegTextField.text)
-    }
-    
-    func isValidPass() -> Bool {
-        guard passwordRegTextField.text == passwordConfRegTextField.text else { return false }
-        guard let pass = passwordRegTextField.text else { return false }
-        return pass.count > 5
-    }
-
-    
     @objc func didTapSignUpButton() {
         var message: String = ""
-        if isValidInputEmail() && isValidPass() {
+        if isValidInputEmail(userEmail: emailRegTextField.text) && isValidPass(userPassword: passwordRegTextField.text, userPasswordConfirm: passwordConfRegTextField.text) {
             let signUpManager = FirebaseAuthManager()
             if let email = emailRegTextField.text, let password = passwordRegTextField.text {
                 signUpManager.createUser(email: email, password: password) {[weak self] (success) in
@@ -64,14 +51,14 @@ class SignUpVC: UIViewController {
                 }
             }
             
-        } else if isValidPass() {
+        } else if isValidPass(userPassword: passwordRegTextField.text, userPasswordConfirm: passwordConfRegTextField.text) {
             
             message = "Uncorrect email"
             let alertController = UIAlertController(title: nil, message: message, preferredStyle: .alert)
             alertController.addAction(UIAlertAction(title: "OK", style: .cancel, handler: nil))
             self.display(alertController: alertController)
             
-        } else if isValidInputEmail() {
+        } else if isValidInputEmail(userEmail: emailRegTextField.text) {
             
             message = "write correct password"
             let alertController = UIAlertController(title: nil, message: message, preferredStyle: .alert)
@@ -88,18 +75,23 @@ class SignUpVC: UIViewController {
         
     }
     
+    func display(alertController: UIAlertController) {
+        self.present(alertController, animated: true, completion: nil)
+    }
+    
     func alertFontSize(message: String) -> NSMutableAttributedString {
         let messageFont = [kCTFontAttributeName: UIFont(name: "Avenir-Roman", size: 30.0)!]
         let messageAttrString = NSMutableAttributedString(string: message, attributes: messageFont as [NSAttributedString.Key : Any])
         return messageAttrString
     }
     
-    func display(alertController: UIAlertController) {
-        self.present(alertController, animated: true, completion: nil)
-    }
 
     @IBAction func registerAction(_ sender: Any) {
         didTapSignUpButton()
+    }
+    
+    @IBAction func backAction(_ sender: Any) {
+        self.dismiss(animated: true)
     }
     
 }
