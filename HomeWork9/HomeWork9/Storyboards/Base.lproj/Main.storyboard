@@ -275,12 +275,11 @@
                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="150" id="ArG-3J-c1v"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
-                                <state key="normal" title="Back">
+                                <state key="normal" title="Log Out">
                                     <color key="titleColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
                                 <connections>
-                                    <action selector="backAction:" destination="H8Q-ik-pBG" eventType="touchUpInside" id="khZ-vs-qrS"/>
-                                    <action selector="logoutAction:" destination="cwG-dl-RUT" eventType="touchUpInside" id="YAy-6Q-EHl"/>
+                                    <action selector="logoutAction:" destination="cwG-dl-RUT" eventType="touchUpInside" id="0fb-1r-abW"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -294,7 +293,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5vL-qI-IUN" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-36" y="842"/>
+            <point key="canvasLocation" x="-36.231884057971016" y="841.74107142857144"/>
         </scene>
     </scenes>
     <resources>

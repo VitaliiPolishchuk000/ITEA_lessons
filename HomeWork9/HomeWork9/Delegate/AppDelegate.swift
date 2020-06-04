@@ -14,8 +14,6 @@ import GoogleSignIn
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
-    var window: UIWindow?
-
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         
         FirebaseApp.configure()
@@ -23,8 +21,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Google
         GIDSignIn.sharedInstance().clientID = FirebaseApp.app()?.options.clientID
         GIDSignIn.sharedInstance().delegate = self
-        
-        configureInitialRootViewController(for: window)
         
         return true
     }
@@ -99,25 +95,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 }
 
-extension AppDelegate {
-    func configureInitialRootViewController(for window: UIWindow?) {
-        let defaults = UserDefaults.standard
-        let initialViewController: UIViewController
-        let storyboard = UIStoryboard(name: "Main", bundle: nil)
 
-        if let _ = Auth.auth().currentUser,
-           let userData = defaults.object(forKey: Constants.UserDefaults.currentUser) as? Data,
-           let user = try? JSONDecoder().decode(User.self, from: userData) {
-            User.setCurrent(user)
-            initialViewController = storyboard.instantiateViewController(withIdentifier: "MainVCID") as! MainVC
-        } else {
-            initialViewController = storyboard.instantiateViewController(withIdentifier: "LogInVCID") as! LogInVC
-        }
+    
 
-        window?.rootViewController = initialViewController
-        window?.makeKeyAndVisible()
-    }
-}
 
 extension AppDelegate: GIDSignInDelegate {
     

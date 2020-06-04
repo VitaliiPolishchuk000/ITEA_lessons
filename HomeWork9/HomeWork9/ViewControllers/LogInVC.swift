@@ -59,9 +59,10 @@ class LogInVC: UIViewController {
         
         let action = isSuccess ? (UIAlertAction(title: "Done", style: UIAlertAction.Style.default) { _ in
             
-            if let user = Auth.auth().currentUser?.uid {
-                User.setCurrent(User.init(userId: user), writeToUserDefaults: true)
+            if let userId = Auth.auth().currentUser?.uid {
+                UserDefaults.standard.set(userId, forKey: Constants.UserDefaults.currentUser)
             }
+            
             self.performSegue(withIdentifier: "logInSegue", sender: nil)
             
         }) : (UIAlertAction(title: "Done", style: UIAlertAction.Style.default, handler: nil))
