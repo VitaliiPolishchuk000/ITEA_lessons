@@ -9,8 +9,9 @@ target 'HomeWork9' do
   use_frameworks!
 
   # Pods for HomeWork9
-  pod 'Firebase/Auth'
+  pod 'Firebase/Auth' 
   pod 'FBSDKLoginKit'
   pod 'GoogleSignIn'
+  
 
 end
