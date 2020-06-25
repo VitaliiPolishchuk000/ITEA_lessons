@@ -19,7 +19,6 @@ class MainViewController: UIViewController {
         navigationBarButtonRightItem()
         
     }
-
     
     func navigationBarButtonRightItem()  {
 

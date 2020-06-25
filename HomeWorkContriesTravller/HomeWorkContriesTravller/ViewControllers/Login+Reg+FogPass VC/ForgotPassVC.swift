@@ -12,10 +12,11 @@ import FirebaseAuth
 
 class ForgotPassVC: UIViewController {
     
-    @IBOutlet weak var emailTextField: UITextField!
+    @IBOutlet weak var emailTextField: CustomTextField!
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        setBackground()
     }
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {

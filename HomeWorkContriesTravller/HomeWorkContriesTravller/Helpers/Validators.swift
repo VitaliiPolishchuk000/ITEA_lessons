@@ -20,15 +20,9 @@ class Validators {
         return true
     }
     
-    static func isFilled(name: String?, bornDate: String?, height: String?, address: String?, phone: String?) -> Bool {
-        guard let name = name,
-            let bornDate = bornDate,
-            let height = height,
-            let address = address,
+    static func isFilled(address: String?, phone: String?) -> Bool {
+        guard let address = address,
             let phone = phone,
-            name != "",
-            bornDate != "",
-            height != "",
             address != "",
             phone != "" else { return false }
         return true

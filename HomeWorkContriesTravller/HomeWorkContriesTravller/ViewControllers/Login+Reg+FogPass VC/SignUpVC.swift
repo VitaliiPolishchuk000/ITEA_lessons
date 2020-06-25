@@ -11,9 +11,9 @@ import Foundation
 
 class SignUpVC: UIViewController {
 
-    @IBOutlet weak var emailRegTextField: UITextField!
-    @IBOutlet weak var passwordRegTextField: UITextField!
-    @IBOutlet weak var passwordConfRegTextField: UITextField!
+    @IBOutlet weak var emailRegTextField: CustomTextField!
+    @IBOutlet weak var passwordRegTextField: CustomTextField!
+    @IBOutlet weak var passwordConfRegTextField: CustomTextField!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -22,6 +22,9 @@ class SignUpVC: UIViewController {
         passwordRegTextField.delegate = self
         passwordConfRegTextField.delegate = self
         
+        setBackground()
+        
+        self.navigationController?.navigationBar.isHidden = true
     }
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
@@ -39,7 +42,9 @@ class SignUpVC: UIViewController {
                     vc.modalTransitionStyle = .flipHorizontal
                     vc.modalPresentationStyle = .fullScreen
                     vc.currentUser = user
-                    self.present(vc, animated: true)
+                    if let nc = self.navigationController {
+                        nc.pushViewController(vc, animated: true)
+                    }
                 }
                 
             case .failure(let error):

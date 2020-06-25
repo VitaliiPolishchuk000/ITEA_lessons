@@ -19,7 +19,12 @@ class ImageViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        setBackground()
         prepareView()
+    }
+    
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        self.view.endEditing(true)
     }
     
     func prepareView() {
@@ -96,17 +101,13 @@ extension ImageViewController: UIImagePickerControllerDelegate {
             return
         }
         
-        var imageToSave = selectedImage
+        let imageToSave = selectedImage
         let imageWidth = CGFloat(600.0)
-        if selectedImage.size.height > imageWidth ||
-            selectedImage.size.width > imageWidth {
-            user.image = selectedImage
+        if imageToSave.size.height > imageWidth ||
+            imageToSave.size.width > imageWidth {
+            user.image = imageToSave
             self.prepareAvatar()
-            //imageToSave = UIImage.resizeImage(sourceImage: selectedImage, scaledToWidth: imageWidth)
         }
-        
-        //updateUserIconOnServer(avatar: imageToSave)
-        //uploadAvatarToServer(avatar: imageToSave)
         
         self.dismiss(animated: true, completion: nil)
     }

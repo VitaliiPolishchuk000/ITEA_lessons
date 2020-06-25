@@ -18,6 +18,7 @@ class SignInVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        setBackground()
         loginTextField.delegate = self
         passwordTextField.delegate = self
         
