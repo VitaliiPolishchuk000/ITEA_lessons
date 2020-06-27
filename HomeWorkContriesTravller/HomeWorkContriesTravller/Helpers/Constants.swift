@@ -11,31 +11,40 @@ import UIKit
 
 struct Colors {
     static let purple = UIColor(red: 153/255, green: 52/255, blue: 187/255, alpha: 1)
-//    static let tropicRed    = UIColor(red: 178/255, green: 51/255, blue: 51/255, alpha: 1)
-//    static let tropicYellow = UIColor(red: 255/255, green: 242/255, blue: 177/255, alpha: 1)
-//    static let tropicOrange = UIColor(red: 253/255, green: 201/255, blue: 118/255, alpha: 1)
+
 }
 
 struct Fonts {
-    static let futuraMediumTextFont = "Futura-Medium"
+    static let futuraMediumTextFont =   "Futura-Medium"
 }
 
-let kNameBackgroundImage = "background"
+/*
+* --------------------------------------------------------
+*      APP Files Name Key
+* --------------------------------------------------------
+*/
 
+let kNameBackgroundImage =              "background"
+let kNamePhotoDefaultImage =            "ic_account_circle2x"
 
-let kEnterFirstName = "Enter First Name"
-let kEnterLastName = "Enter Last Name"
-let kEnterEmail = "Enter E-mail"
-let kGenderDropDown = "Select your gender"
-let kTimeZoneDropDown = "Select your timezone"
-let kBornDateSelect = "Select your born date"
-let kEnterPhoneNumber = "Enter your phone number"
-let kEnterAdress = "Enter your adress"
+/*
+* --------------------------------------------------------
+*      View name, title
+* --------------------------------------------------------
+*/
 
-let kNextButtonTitle = "Next"
-let kAlertTitleWrong = "Warning!"
+let kEnterFirstName =                   "Enter First Name"
+let kEnterLastName =                    "Enter Last Name"
+let kEnterEmail =                       "Enter E-mail"
+let kGenderDropDown =                   "Select your gender"
+let kTimeZoneDropDown =                 "Select your timezone"
+let kBornDateSelect =                   "Select your born date"
+let kEnterPhoneNumber =                 "Enter your phone number"
+let kEnterAdress =                      "Enter your adress"
 
-let kAvatarLabel = "Set your avatar"
+let kNextButtonTitle =                  "Next"
+let kRegFinishTitleButton =             "Registration"
+let kAvatarLabel =                      "Set your avatar"
 
 /*
 * --------------------------------------------------------
@@ -43,19 +52,25 @@ let kAvatarLabel = "Set your avatar"
 * --------------------------------------------------------
 */
 
-let kAlertMessageRegistrationSuccess = "Registration successfull"
-let kAlertMessageAuthSuccess = "You are authorized"
-let kAlertMessageRemindPassSucces = "Check your email"
-let kAlertMessageWrong = "The fields are not filled"
-let kAlertMessageWrongPhoneNumber = "Phone number is wrong"
+let kAlertMessageRegistrationSuccess =  "Registration successfull"
+let kAlertMessageAuthSuccess =          "You are authorized"
+let kAlertMessageRemindPassSucces =     "Check your email"
+let kAlertMessageWrong =                "The fields are not filled"
+let kAlertMessageWrongPhoneNumber =     "Phone number is wrong"
+let kActionSheetCamera =                "Take a Picture"
+let kActionSheetPhoto =                 "Choose from gallery"
+let kActionSheetCancel =                "Cancel"
+let kFillInAllTheInputFields =          "Fill in all the input fields"
+let kPhotoNotExist =                    "Photo not exist"
 
-let kAlertTitleSuccess = "Success"
-let kAlertTitleError = "Error"
-
+let kAlertTitleSuccess =                "Success"
+let kAlertTitleError =                  "Error"
+let kAlertTitleWrong =                  "Warning!"
 /*
 * --------------------------------------------------------
 *      UserDefaults
 * --------------------------------------------------------
 */
 
-let kCurrentUserKey = "currentUser"
+let kCurrentUserKey =                   "currentUser"
+

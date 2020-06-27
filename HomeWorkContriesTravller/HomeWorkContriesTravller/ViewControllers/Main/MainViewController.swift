@@ -29,11 +29,11 @@ class MainViewController: UIViewController {
         button.addTarget(self, action: #selector(ButtonTapped), for: .touchUpInside)
         let barButton = UIBarButtonItem(customView: button)
         self.navigationItem.rightBarButtonItem = barButton
-
+        
     }
 
     @objc func ButtonTapped() {
-     self.performSegue(withIdentifier: "UserProfileSegue", sender: nil)
+ 
     }
     
 }

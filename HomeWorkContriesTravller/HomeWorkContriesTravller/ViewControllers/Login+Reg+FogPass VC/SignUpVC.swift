@@ -8,12 +8,16 @@
 
 import UIKit
 import Foundation
+import Firebase
 
 class SignUpVC: UIViewController {
 
     @IBOutlet weak var emailRegTextField: CustomTextField!
     @IBOutlet weak var passwordRegTextField: CustomTextField!
     @IBOutlet weak var passwordConfRegTextField: CustomTextField!
+    
+    var user = UserProfile()
+    var userImage: UIImage!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -37,24 +41,54 @@ class SignUpVC: UIViewController {
             switch result {
                 
             case .success(let user):
+                
+                self.saveUserImage(currentUser: user)
+                
                 self.showAlert(title: kAlertTitleSuccess, message: kAlertMessageRegistrationSuccess) {
-                    let vc = self.storyboard?.instantiateViewController(identifier: "UserProfileViewController") as! UserProfileViewController
+                    let vc = self.storyboard?.instantiateViewController(identifier: "LogInVCID") as! SignInVC
                     vc.modalTransitionStyle = .flipHorizontal
                     vc.modalPresentationStyle = .fullScreen
-                    vc.currentUser = user
-                    if let nc = self.navigationController {
-                        nc.pushViewController(vc, animated: true)
-                    }
+                    vc.user.email = user.email!
+                    self.present(vc, animated: true)
+                    
                 }
                 
             case .failure(let error):
                 self.showAlert(title: kAlertTitleError, message: error.localizedDescription)
             }
         }
-        
     }
     
+    private func saveAllUserData() {
+         FirestoreManager.shared.saveProfile(user: user, userImage: userImage) { (result) in
+             switch result {
+             case .success(_):
+                 self.showAlert(title: kAlertTitleSuccess, message: kAlertMessageRegistrationSuccess) {
+                 }
+             case .failure(let error):
+                 self.showAlert(title: kAlertTitleError, message: error.localizedDescription)
+             }
+         }
+     }
+     
+     private func saveUserImage(currentUser: User) {
+
+        user.email = currentUser.email!
+         
+        StorageManager.shared.upload(userPhoto: userImage, userId: user.email) { (result) in
+             switch result {
+             case .success(let url):
+                 self.user.avatarStringURL = url.absoluteString
+                 self.saveAllUserData()
+             case .failure(let error):
+                 self.showAlert(title: kAlertTitleError, message: error.localizedDescription)
+             }
+         }
+     }
+    
     @IBAction func registerAction(_ sender: Any) {
+        
+        
         didTapSignUpButton()
     }
     

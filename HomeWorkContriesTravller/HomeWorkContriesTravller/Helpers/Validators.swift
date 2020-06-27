@@ -28,6 +28,16 @@ class Validators {
         return true
     }
     
+    static func isFilled(gender: String?, bornDate: String?, timeZone: String?) -> Bool {
+        guard let gender = gender,
+            let bornDate = bornDate,
+            let timeZone = timeZone,
+            gender != "",
+            bornDate != "",
+            timeZone != "" else { return false }
+        return true
+    }
+    
    static func isValidInputEmail (_ userEmail: String?) -> Bool {
         let emailRegEx = "[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,64}"
         let emailPredicate = NSPredicate(format:"SELF MATCHES %@", emailRegEx)

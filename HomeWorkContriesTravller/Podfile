@@ -10,5 +10,7 @@ target 'HomeWorkContriesTravller' do
   pod 'SVProgressHUD'
   pod 'iOSDropDown'
   pod "FlagPhoneNumber"
+  pod 'Firebase/Firestore'
+  pod 'Firebase/Storage'
 
 end

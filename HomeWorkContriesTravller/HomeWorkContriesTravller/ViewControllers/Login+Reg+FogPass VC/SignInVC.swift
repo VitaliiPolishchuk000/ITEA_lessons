@@ -15,13 +15,14 @@ class SignInVC: UIViewController {
     @IBOutlet weak var loginTextField: UITextField!
     @IBOutlet weak var passwordTextField: UITextField!
     
+    var user = UserProfile()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
         setBackground()
         loginTextField.delegate = self
         passwordTextField.delegate = self
-        
     }
     
     // Keyboard dismiss
@@ -52,7 +53,6 @@ class SignInVC: UIViewController {
     }
 
 }
-
 
 extension SignInVC: UITextFieldDelegate {
     

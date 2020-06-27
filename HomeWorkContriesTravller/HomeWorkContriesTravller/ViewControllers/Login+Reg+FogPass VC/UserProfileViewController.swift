@@ -23,7 +23,6 @@ class UserProfileViewController: UIViewController {
     private let datePicker = UIDatePicker()
     
     var user = UserProfile()
-    var currentUser: User!
     var selectedTF: UITextField? = nil
     
     override func viewDidLoad() {
@@ -108,7 +107,7 @@ class UserProfileViewController: UIViewController {
         let doneButton = UIBarButtonItem(barButtonSystemItem: .done, target: nil, action: #selector(donePressed))
 
         let toolbar = UIToolbar()
-        toolbar.backgroundColor = .systemOrange
+        toolbar.backgroundColor = .systemYellow
         toolbar.setItems([doneButton], animated: true)
         toolbar.sizeToFit()
         
@@ -125,7 +124,7 @@ class UserProfileViewController: UIViewController {
         datePicker.maximumDate = maxDate
         datePicker.minimumDate = minDate
         
-        bornDateTextField.inputView?.backgroundColor = .darkGray
+        bornDateTextField.inputView?.backgroundColor = .systemYellow
     }
     
     @objc private func donePressed() {
@@ -145,12 +144,10 @@ class UserProfileViewController: UIViewController {
         
         for index in 0..<arrayOfTimeZoneId.count {
             let timeZone = TimeZone(identifier: "\(TimeZone.knownTimeZoneIdentifiers[index])")
-            
             arrayOffsetUTC.append((timeZone?.offsetInHours())!)
         }
-        
+
         for index in 0..<arrayOfTimeZoneId.count {
-            
             arrayOfTimeZone.append("\(arrayOffsetUTC[index]) \(arrayOfTimeZoneId[index])")
         }
         
@@ -162,11 +159,12 @@ class UserProfileViewController: UIViewController {
     }
     
     @objc func onTapButtonNext() {
-        if Validators.isValidNameField(name: firstNameField.text!) && Validators.isValidNameField(name: lastNameField.text!) {
+        if Validators.isValidNameField(name: firstNameField.text!) && Validators.isValidNameField(name: lastNameField.text!) && Validators.isFilled(gender: genderDropDown.text!, bornDate: bornDateTextField.text!, timeZone: timeZoneDropDown.text!) {
             user.firstName = firstNameField.text!
             user.lastName = lastNameField.text!
             user.gender = genderDropDown.text!
             user.bornDate = bornDateTextField.text!
+            user.timeZone = timeZoneDropDown.text!
             onSecondScreen()
         } else {
             self.showAlert(title: kAlertTitleWrong, message: kAlertMessageWrong)
