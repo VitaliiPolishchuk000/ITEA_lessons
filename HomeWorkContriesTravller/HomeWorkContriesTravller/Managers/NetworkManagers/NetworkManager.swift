@@ -168,4 +168,52 @@ public class NetworkManager {
         }
     }
     
+    func getImagetoText(url: URL) {
+
+        let headers = [
+            "x-rapidapi-host": "image-to-text2.p.rapidapi.com",
+            "x-rapidapi-key": "5149ae2853msh263c0299a79f836p1b75acjsn9841e9ac2704",
+            "content-type": "application/json",
+            "accept": "application/json"
+        ]
+        let parameters = [
+            "source": url.absoluteString,
+            "sourceType": "url"
+        ] as [String : Any]
+
+        do {
+            
+            let postData = try JSONSerialization.data(withJSONObject: parameters, options: [])
+
+            let request = NSMutableURLRequest(url: NSURL(string: "https://image-to-text2.p.rapidapi.com/cloudVision/imageToText?source=\(url.absoluteString)&sourceType=url")! as URL,
+                                                    cachePolicy: .useProtocolCachePolicy,
+                                                timeoutInterval: 10.0)
+            request.httpMethod = "POST"
+            request.allHTTPHeaderFields = headers
+            request.httpBody = postData as Data
+
+            let session = URLSession.shared
+            let dataTask = session.dataTask(with: request as URLRequest, completionHandler: { (data, response, error) -> Void in
+                if (error != nil) {
+                    print(error)
+                } else {
+                    let httpResponse = response as? HTTPURLResponse
+                    print(httpResponse)
+                }
+                if let data = data {
+                    let result = try? JSONSerialization.jsonObject(with: data, options: []) as? [String : Any]
+                    if let result = result {
+                        let readyText = result["text"] as! String
+                    }
+                }
+            })
+            dataTask.resume()
+            
+        } catch {
+            
+        }
+        
+    }
+    
 }
+

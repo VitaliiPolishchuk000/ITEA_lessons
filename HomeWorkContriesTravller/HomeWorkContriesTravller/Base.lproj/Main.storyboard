@@ -500,19 +500,16 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6XB-rU-tZj">
-                                <rect key="frame" x="184" y="469" width="46" height="30"/>
+                                <rect key="frame" x="100" y="388" width="214" height="174"/>
                                 <state key="normal" title="Button"/>
-                                <connections>
-                                    <segue destination="o9s-xZ-XTL" kind="show" id="zWj-QB-bB0"/>
-                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="6XB-rU-tZj" firstAttribute="top" secondItem="vML-aQ-jIf" secondAttribute="top" constant="381" id="9CM-LP-Tmn"/>
-                            <constraint firstItem="6XB-rU-tZj" firstAttribute="leading" secondItem="vML-aQ-jIf" secondAttribute="leading" constant="184" id="aIX-Ws-STX"/>
-                            <constraint firstItem="vML-aQ-jIf" firstAttribute="trailing" secondItem="6XB-rU-tZj" secondAttribute="trailing" constant="184" id="aWg-WU-kbH"/>
-                            <constraint firstItem="vML-aQ-jIf" firstAttribute="bottom" secondItem="6XB-rU-tZj" secondAttribute="bottom" constant="363" id="hNu-4a-7WD"/>
+                            <constraint firstItem="6XB-rU-tZj" firstAttribute="top" secondItem="vML-aQ-jIf" secondAttribute="top" constant="300" id="9CM-LP-Tmn"/>
+                            <constraint firstItem="6XB-rU-tZj" firstAttribute="leading" secondItem="vML-aQ-jIf" secondAttribute="leading" constant="100" id="aIX-Ws-STX"/>
+                            <constraint firstItem="vML-aQ-jIf" firstAttribute="trailing" secondItem="6XB-rU-tZj" secondAttribute="trailing" constant="100" id="aWg-WU-kbH"/>
+                            <constraint firstItem="vML-aQ-jIf" firstAttribute="bottom" secondItem="6XB-rU-tZj" secondAttribute="bottom" constant="300" id="hNu-4a-7WD"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="vML-aQ-jIf"/>
                     </view>
