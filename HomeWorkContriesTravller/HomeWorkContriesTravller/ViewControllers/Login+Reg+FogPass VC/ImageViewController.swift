@@ -10,12 +10,15 @@ import UIKit
 
 class ImageViewController: UIViewController {
     
+    // MARK: - IBOutlet
     @IBOutlet weak var avatarLabel: UILabel!
     @IBOutlet weak var avatarImage: UIImageView!
     @IBOutlet weak var regFinishButton: CustomButton!
     
+    // MARK: - Class Properties
     var user = UserProfile()
     
+    // MARK: - UIViewController events
     override func viewDidLoad() {
         super.viewDidLoad()
         prepareNextButton()
@@ -28,6 +31,7 @@ class ImageViewController: UIViewController {
         self.view.endEditing(true)
     }
     
+    // MARK: - Methods
     func prepareView() {
         avatarLabel.text = kAvatarLabel
         avatarLabel.font = UIFont(name: Fonts.futuraMediumTextFont, size: 20)

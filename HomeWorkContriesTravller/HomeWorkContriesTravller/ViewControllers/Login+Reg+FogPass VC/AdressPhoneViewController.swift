@@ -10,15 +10,18 @@ import UIKit
 import FlagPhoneNumber
 
 class AdressPhoneViewController: UIViewController {
-
-    private var listController = FPNCountryListViewController(style: .grouped)
-    private var isPhoneValid = false
-    var user = UserProfile()
-
+    
+    // MARK: - IBOutlet
     @IBOutlet weak var phoneNumberTextField: FPNTextField!
     @IBOutlet weak var adressTextField: CustomTextField!
     @IBOutlet weak var NextButton: CustomButton!
     
+    // MARK: - Class Properties
+    private var listController = FPNCountryListViewController(style: .grouped)
+    private var isPhoneValid = false
+    var user = UserProfile()
+    
+    // MARK: - UIViewController events
     override func viewDidLoad() {
         super.viewDidLoad()
         setBackground()
@@ -32,6 +35,7 @@ class AdressPhoneViewController: UIViewController {
         self.view.endEditing(true)
     }
     
+    // MARK: - Methods
     func prepareView() {
         
         phoneNumberTextField.placeholder = kEnterPhoneNumber
@@ -81,6 +85,7 @@ class AdressPhoneViewController: UIViewController {
     
 }
 
+// MARK: - FPNTextFieldDelegate
 extension AdressPhoneViewController: FPNTextFieldDelegate {
     
     func fpnDisplayCountryList() {

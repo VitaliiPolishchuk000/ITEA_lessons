@@ -23,6 +23,7 @@ class ForgotPassVC: UIViewController {
         self.view.endEditing(true)
     }
     
+// MARK: - IBAction
     @IBAction func sendLetterAction(_ sender: UIButton) {
         AuthManager.shared.remindPassword(email: emailTextField.text) { (result) in
             switch result {
@@ -41,7 +42,8 @@ class ForgotPassVC: UIViewController {
     }
     
 }
-    
+
+// MARK: - UITextFieldDelegate
 extension ForgotPassVC: UITextFieldDelegate {
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         textField.resignFirstResponder()

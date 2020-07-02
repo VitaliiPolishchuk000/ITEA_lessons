@@ -12,13 +12,16 @@ import Firebase
 
 class SignUpVC: UIViewController {
 
+    // MARK: - IBOutlet
     @IBOutlet weak var emailRegTextField: CustomTextField!
     @IBOutlet weak var passwordRegTextField: CustomTextField!
     @IBOutlet weak var passwordConfRegTextField: CustomTextField!
     
+    // MARK: - Class Properties
     var user = UserProfile()
     var userImage: UIImage!
     
+    // MARK: - UIViewController events
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -35,6 +38,7 @@ class SignUpVC: UIViewController {
         self.view.endEditing(true)
     }
     
+    // MARK: - Methods
     @objc func didTapSignUpButton() {
         
         AuthManager.shared.register(email: emailRegTextField.text, password: passwordRegTextField.text, confirmPassword: passwordConfRegTextField.text) { (result) in
@@ -98,8 +102,8 @@ class SignUpVC: UIViewController {
     
 }
 
+// MARK: - UITextFieldDelegate
 extension SignUpVC: UITextFieldDelegate {
-
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         switch textField {
         case emailRegTextField: passwordRegTextField.becomeFirstResponder()

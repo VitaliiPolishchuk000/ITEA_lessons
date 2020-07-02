@@ -12,6 +12,7 @@ import iOSDropDown
 
 class UserProfileViewController: UIViewController {
     
+    // MARK: - IBOutlet
     @IBOutlet weak var firstNameField: CustomTextField!
     @IBOutlet weak var lastNameField: CustomTextField!
     @IBOutlet weak var nextButton: CustomButton!
@@ -19,12 +20,14 @@ class UserProfileViewController: UIViewController {
     @IBOutlet weak var timeZoneDropDown: DropDown!
     @IBOutlet weak var bornDateTextField: CustomTextField!
     
+    // MARK: - Class Properties
     var genderArray = ["Male", "Female", "Other"]
     private let datePicker = UIDatePicker()
     
     var user = UserProfile()
     var selectedTF: UITextField? = nil
     
+    // MARK: - UIViewController events
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -55,6 +58,7 @@ class UserProfileViewController: UIViewController {
         self.view.endEditing(true)
     }
     
+    // MARK: - Methods
     func prepareView() {
         firstNameField.placeholder = kEnterFirstName
         lastNameField.placeholder = kEnterLastName
@@ -77,10 +81,9 @@ class UserProfileViewController: UIViewController {
         genderDropDown.layer.borderWidth       = 2
         genderDropDown.layer.borderColor       = UIColor.darkGray.cgColor
         genderDropDown.clipsToBounds           = true
-        genderDropDown.didSelect{(selectedText , index ,id) in
-//    self.genderDropDown.text = "Selected String: \(selectedText) \n index: \(index)"
-        
-        }
+//        genderDropDown.didSelect{(selectedText , index ,id) in
+//            self.genderDropDown.text = "Selected String: \(selectedText) \n index: \(index)"
+//        }
     }
     
     func prepareTimeZoneDropDown() {
@@ -96,11 +99,9 @@ class UserProfileViewController: UIViewController {
         timeZoneDropDown.layer.borderWidth       = 2
         timeZoneDropDown.layer.borderColor       = UIColor.darkGray.cgColor
         timeZoneDropDown.clipsToBounds           = true
-        timeZoneDropDown.didSelect{(selectedText , index ,id) in
-    //      self.genderDropDown.text = "Selected String: \(selectedText) \n index: \(index)"
-         
-            
-        }
+//        timeZoneDropDown.didSelect{(selectedText , index ,id) in
+//            self.genderDropDown.text = "Selected String: \(selectedText) \n index: \(index)"
+//        }
     }
     
     private func createDatePicker() {

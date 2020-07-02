@@ -30,4 +30,15 @@ extension UIViewController {
         alertController.addAction(cancelAction)
         present(alertController, animated: true)
     }
+    
+    func showLogoutActionSheet(completion: @escaping () -> Void = { }) {
+        let alertController = UIAlertController(title: nil, message: nil, preferredStyle: .actionSheet)
+        let logoutAction = UIAlertAction(title: kActionSheetLogout, style: .destructive) { (_) in
+            completion()
+        }
+        let cancelAction = UIAlertAction(title: kActionSheetCancel, style: .cancel)
+        alertController.addAction(logoutAction)
+        alertController.addAction(cancelAction)
+        present(alertController, animated: true)
+    }
 }

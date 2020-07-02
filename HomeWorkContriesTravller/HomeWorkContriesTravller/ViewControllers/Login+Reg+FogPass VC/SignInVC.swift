@@ -12,11 +12,14 @@ import FirebaseAuth
 
 class SignInVC: UIViewController {
 
+    // MARK: - IBOutlets
     @IBOutlet weak var loginTextField: UITextField!
     @IBOutlet weak var passwordTextField: UITextField!
     
+    // MARK: - Class Properties
     var user = UserProfile()
     
+    // MARK: - UIViewController events
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -30,6 +33,7 @@ class SignInVC: UIViewController {
            self.view.endEditing(true)
        }
 
+    // MARK: - Methods
     @objc func didTapLoginButton() {
         AuthManager.shared.login(email: loginTextField.text, password: passwordTextField.text) { (result) in
             switch result {
@@ -54,6 +58,7 @@ class SignInVC: UIViewController {
 
 }
 
+// MARK: - UITextFieldDelegate
 extension SignInVC: UITextFieldDelegate {
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {

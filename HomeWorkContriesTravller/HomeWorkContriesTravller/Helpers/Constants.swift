@@ -11,6 +11,7 @@ import UIKit
 
 struct Colors {
     static let purple = UIColor(red: 153/255, green: 52/255, blue: 187/255, alpha: 1)
+    static let peachColor = UIColor(red: 255/255, green: 204/255, blue: 153/255, alpha: 1)
 
 }
 
@@ -46,6 +47,10 @@ let kNextButtonTitle =                  "Next"
 let kRegFinishTitleButton =             "Registration"
 let kAvatarLabel =                      "Set your avatar"
 
+let kMainVCTitle =                      "Countries"
+let kSearchPlaceholder =                "Search Contry"
+let kTranslateImage =                   "Translate image"
+let kLogOutAction =                     "Log out"
 /*
 * --------------------------------------------------------
 *      Alert massage, title
@@ -57,11 +62,13 @@ let kAlertMessageAuthSuccess =          "You are authorized"
 let kAlertMessageRemindPassSucces =     "Check your email"
 let kAlertMessageWrong =                "The fields are not filled"
 let kAlertMessageWrongPhoneNumber =     "Phone number is wrong"
-let kActionSheetCamera =                "Take a Picture"
-let kActionSheetPhoto =                 "Choose from gallery"
-let kActionSheetCancel =                "Cancel"
 let kFillInAllTheInputFields =          "Fill in all the input fields"
 let kPhotoNotExist =                    "Photo not exist"
+
+let kActionSheetCamera =                "Take a Picture"
+let kActionSheetPhoto =                 "Choose from gallery"
+let kActionSheetLogout =                "Log out"
+let kActionSheetCancel =                "Cancel"
 
 let kAlertTitleSuccess =                "Success"
 let kAlertTitleError =                  "Error"
