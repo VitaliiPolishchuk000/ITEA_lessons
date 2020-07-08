@@ -1,9 +1,9 @@
 //
-//  Alerts.swift
-//  CountriesTraveller
+//  MainViewController.swift
+//  HomeWorkContriesTravller
 //
-//  Created by Steew on 14.06.2020.
-//  Copyright © 2020 Steew. All rights reserved.
+//  Created by Vitalii on 17.06.2020.
+//  Copyright © 2020 Vitalii Polishchuk. All rights reserved.
 //
 
 import Foundation

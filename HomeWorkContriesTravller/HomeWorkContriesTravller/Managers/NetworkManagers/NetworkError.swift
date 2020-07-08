@@ -1,9 +1,9 @@
 //
-//  NetworkError.swift
-//  iTraveler
+//  MainViewController.swift
+//  HomeWorkContriesTravller
 //
-//  Created by Oleksandr Kurtsev on 18/06/2020.
-//  Copyright © 2020 Oleksandr Kurtsev. All rights reserved.
+//  Created by Vitalii on 17.06.2020.
+//  Copyright © 2020 Vitalii Polishchuk. All rights reserved.
 //
 
 import Foundation
