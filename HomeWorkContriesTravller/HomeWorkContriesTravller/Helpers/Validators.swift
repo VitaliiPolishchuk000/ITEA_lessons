@@ -57,4 +57,13 @@ class Validators {
             return false
         }
     }
+    
+    static func isFilledCurrency(currency1: String, currency2: String) -> Bool {
+        if (!currency1.isEmptyOrWhitespace() && currency1.count < 4) && (!currency2.isEmptyOrWhitespace() && currency2.count < 4) {
+            return true
+        } else {
+            return false
+        }
+    }
+    
 }

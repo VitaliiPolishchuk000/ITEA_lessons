@@ -51,6 +51,12 @@ let kMainVCTitle =                      "Countries"
 let kSearchPlaceholder =                "Search Contry"
 let kTranslateImage =                   "Translate image"
 let kLogOutAction =                     "Log out"
+let kCurrencyConvert =                  "Currency converter"
+let kfirstCurrTextPlacehold =           "Select currency"
+let ksecondCurrTextPlacehold =          "Select currency"
+let kFromCurrency =                     "from Currency"
+let kToCurrency =                       "to Currency"
+
 /*
 * --------------------------------------------------------
 *      Alert massage, title
@@ -64,6 +70,7 @@ let kAlertMessageWrong =                "The fields are not filled"
 let kAlertMessageWrongPhoneNumber =     "Phone number is wrong"
 let kFillInAllTheInputFields =          "Fill in all the input fields"
 let kPhotoNotExist =                    "Photo not exist"
+let kSelectCurrencyMessage =            "Select currencies"
 
 let kActionSheetCamera =                "Take a Picture"
 let kActionSheetPhoto =                 "Choose from gallery"

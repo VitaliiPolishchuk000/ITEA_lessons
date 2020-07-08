@@ -81,6 +81,8 @@ class UserProfileViewController: UIViewController {
         genderDropDown.layer.borderWidth       = 2
         genderDropDown.layer.borderColor       = UIColor.darkGray.cgColor
         genderDropDown.clipsToBounds           = true
+        genderDropDown.leftView = UIView(frame: CGRect(x: 0, y: 0, width: 40, height: genderDropDown.frame.height))
+        genderDropDown.leftViewMode = .always
 //        genderDropDown.didSelect{(selectedText , index ,id) in
 //            self.genderDropDown.text = "Selected String: \(selectedText) \n index: \(index)"
 //        }
@@ -99,6 +101,8 @@ class UserProfileViewController: UIViewController {
         timeZoneDropDown.layer.borderWidth       = 2
         timeZoneDropDown.layer.borderColor       = UIColor.darkGray.cgColor
         timeZoneDropDown.clipsToBounds           = true
+        timeZoneDropDown.leftView = UIView(frame: CGRect(x: 0, y: 0, width: 40, height: timeZoneDropDown.frame.height))
+        timeZoneDropDown.leftViewMode = .always
 //        timeZoneDropDown.didSelect{(selectedText , index ,id) in
 //            self.genderDropDown.text = "Selected String: \(selectedText) \n index: \(index)"
 //        }
@@ -125,7 +129,7 @@ class UserProfileViewController: UIViewController {
         datePicker.maximumDate = maxDate
         datePicker.minimumDate = minDate
         
-        bornDateTextField.inputView?.backgroundColor = .systemYellow
+        bornDateTextField.inputView?.backgroundColor = Colors.peachColor
     }
     
     @objc private func donePressed() {

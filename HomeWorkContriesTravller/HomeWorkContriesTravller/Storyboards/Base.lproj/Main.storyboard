@@ -635,6 +635,121 @@
             </objects>
             <point key="canvasLocation" x="2779.7101449275365" y="211.60714285714286"/>
         </scene>
+        <!--Currency View Controller-->
+        <scene sceneID="spa-1T-Bdo">
+            <objects>
+                <viewController storyboardIdentifier="CurrencyViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="Wdk-tg-FXi" customClass="CurrencyViewController" customModule="HomeWorkContriesTravller" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="dAp-7O-y86">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="33" translatesAutoresizingMaskIntoConstraints="NO" id="5A2-d0-6L0">
+                                <rect key="frame" x="30" y="447" width="354" height="123"/>
+                                <subviews>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="enter currency" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="uXI-uw-82l" customClass="DropDown" customModule="iOSDropDown">
+                                        <rect key="frame" x="0.0" y="0.0" width="354" height="45"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="45" id="vB8-z9-BdK"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                        <textInputTraits key="textInputTraits" returnKeyType="next"/>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                <real key="value" value="0.0"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                    </textField>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="rate for amount" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="7d1-YL-AKB" customClass="CustomTextField" customModule="HomeWorkContriesTravller" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="78" width="354" height="45"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                </subviews>
+                            </stackView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="q6m-9o-ctm">
+                                <rect key="frame" x="50" y="413" width="314" height="24"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" alignment="center" spacing="30" translatesAutoresizingMaskIntoConstraints="NO" id="hhW-TE-fr8">
+                                <rect key="frame" x="30" y="243" width="354" height="120"/>
+                                <subviews>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="enter currency" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="3I7-cr-dDF" customClass="DropDown" customModule="iOSDropDown">
+                                        <rect key="frame" x="0.0" y="0.0" width="354" height="45"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="45" id="Twl-op-svN"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                        <textInputTraits key="textInputTraits" returnKeyType="next"/>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                <real key="value" value="0.0"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                    </textField>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="enter amount" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="WlE-f4-pcz" customClass="CustomTextField" customModule="HomeWorkContriesTravller" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="75" width="354" height="45"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="WlE-f4-pcz" secondAttribute="trailing" id="Fvh-bt-dUs"/>
+                                    <constraint firstItem="WlE-f4-pcz" firstAttribute="leading" secondItem="hhW-TE-fr8" secondAttribute="leading" id="OfL-lS-alW"/>
+                                    <constraint firstAttribute="trailing" secondItem="3I7-cr-dDF" secondAttribute="trailing" id="iVW-wN-lz5"/>
+                                    <constraint firstItem="3I7-cr-dDF" firstAttribute="leading" secondItem="hhW-TE-fr8" secondAttribute="leading" id="mIH-ez-kqf"/>
+                                </constraints>
+                            </stackView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5hE-cA-beX">
+                                <rect key="frame" x="50" y="209" width="314" height="24"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nMl-t5-z86" customClass="CustomButton" customModule="HomeWorkContriesTravller" customModuleProvider="target">
+                                <rect key="frame" x="132" y="630" width="150" height="36"/>
+                                <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="150" id="RPM-ff-P1j"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <state key="normal" title="Button"/>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="PQ1-Yi-oRh" firstAttribute="trailing" secondItem="5hE-cA-beX" secondAttribute="trailing" constant="50" id="COb-9I-wOE"/>
+                            <constraint firstItem="PQ1-Yi-oRh" firstAttribute="trailing" secondItem="q6m-9o-ctm" secondAttribute="trailing" constant="50" id="EoB-Tg-nk5"/>
+                            <constraint firstItem="hhW-TE-fr8" firstAttribute="centerY" secondItem="PQ1-Yi-oRh" secondAttribute="centerY" constant="-150" id="H7h-lw-uqi"/>
+                            <constraint firstItem="q6m-9o-ctm" firstAttribute="top" secondItem="hhW-TE-fr8" secondAttribute="bottom" constant="50" id="N1E-6n-dad"/>
+                            <constraint firstItem="5hE-cA-beX" firstAttribute="leading" secondItem="PQ1-Yi-oRh" secondAttribute="leading" constant="50" id="NeT-gh-PMc"/>
+                            <constraint firstItem="PQ1-Yi-oRh" firstAttribute="trailing" secondItem="hhW-TE-fr8" secondAttribute="trailing" constant="30" id="SGh-gX-eIA"/>
+                            <constraint firstItem="nMl-t5-z86" firstAttribute="top" secondItem="5A2-d0-6L0" secondAttribute="bottom" constant="60" id="SoI-oz-fNw"/>
+                            <constraint firstItem="hhW-TE-fr8" firstAttribute="leading" secondItem="PQ1-Yi-oRh" secondAttribute="leading" constant="30" id="Tp8-oq-wJh"/>
+                            <constraint firstItem="q6m-9o-ctm" firstAttribute="leading" secondItem="PQ1-Yi-oRh" secondAttribute="leading" constant="50" id="Vwu-r8-86x"/>
+                            <constraint firstItem="PQ1-Yi-oRh" firstAttribute="trailing" secondItem="5A2-d0-6L0" secondAttribute="trailing" constant="30" id="Z16-fQ-kY3"/>
+                            <constraint firstItem="5A2-d0-6L0" firstAttribute="leading" secondItem="PQ1-Yi-oRh" secondAttribute="leading" constant="30" id="cZ0-0c-hXG"/>
+                            <constraint firstItem="5A2-d0-6L0" firstAttribute="top" secondItem="q6m-9o-ctm" secondAttribute="bottom" constant="10" id="cob-5R-Atq"/>
+                            <constraint firstItem="hhW-TE-fr8" firstAttribute="top" secondItem="5hE-cA-beX" secondAttribute="bottom" constant="10" id="eRI-H8-Dxp"/>
+                            <constraint firstItem="nMl-t5-z86" firstAttribute="centerX" secondItem="PQ1-Yi-oRh" secondAttribute="centerX" id="ll5-Iv-WG8"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="PQ1-Yi-oRh"/>
+                    </view>
+                    <connections>
+                        <outlet property="convertButton" destination="nMl-t5-z86" id="L3M-QB-Eem"/>
+                        <outlet property="firstCurrencyLabel" destination="5hE-cA-beX" id="mBb-X3-xiA"/>
+                        <outlet property="firstCurrencyTextField" destination="3I7-cr-dDF" id="zZu-g0-VgR"/>
+                        <outlet property="firstEmountTextField" destination="WlE-f4-pcz" id="1X9-GZ-RUc"/>
+                        <outlet property="secondCurrencyLabel" destination="q6m-9o-ctm" id="wK1-dd-3MW"/>
+                        <outlet property="secondCurrencyTextField" destination="uXI-uw-82l" id="6UE-OP-DPx"/>
+                        <outlet property="secondEmountTextField" destination="7d1-YL-AKB" id="47Y-mB-pTe"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="cxI-1u-cc5" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3469.5652173913045" y="211.60714285714286"/>
+        </scene>
         <!--Navigation Controller-->
         <scene sceneID="s6H-ib-Dg2">
             <objects>

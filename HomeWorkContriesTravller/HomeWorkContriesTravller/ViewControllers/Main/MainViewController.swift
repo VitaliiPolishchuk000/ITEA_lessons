@@ -31,6 +31,8 @@ class MainViewController: UIViewController {
         return searchController.isActive && !searchBarIsEmpty
     }
     
+    var availableCurrency: Currency!
+    
     // MARK: - UIViewController events
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -48,7 +50,7 @@ class MainViewController: UIViewController {
     func navigationBarButtonRightItem()  {
         
         rightBarDropDown.anchorView = UserProfileBarButtonItem
-        rightBarDropDown.dataSource = [kTranslateImage, kLogOutAction]
+        rightBarDropDown.dataSource = [kTranslateImage, kCurrencyConvert, kLogOutAction]
         rightBarDropDown.cellConfiguration = { (index, item) in return "\(item)" }
 
         let button = UIButton(type: .custom)
@@ -69,16 +71,28 @@ class MainViewController: UIViewController {
             if item == kLogOutAction {
                 self.logOut()
             }
+            if item == kCurrencyConvert {
+                self.fetchAvailableCurrency()
+//                self.goToCurrencyConverter()
+            }
         }
 
         rightBarDropDown.width = 150
-        rightBarDropDown.bottomOffset = CGPoint(x: UIScreen.main.bounds.width/2, y: -(UIScreen.main.bounds.height)/2 + rightBarDropDown.cellHeight + 20)
+        rightBarDropDown.bottomOffset = CGPoint(x: (UIScreen.main.bounds.width/2 - 50), y: -(UIScreen.main.bounds.height)/2 + rightBarDropDown.cellHeight*2 + 20)
         rightBarDropDown.show()
     }
 
     
     @objc func buttonTapped() {
         showBarButtonDropDown()
+    }
+    
+    private func goToCurrencyConverter() {
+        let vc = storyboard?.instantiateViewController(identifier: "CurrencyViewController") as! CurrencyViewController
+        vc.availableCurrency = self.availableCurrency
+        vc.modalPresentationStyle = .fullScreen
+        
+        self.navigationController?.pushViewController(vc, animated: true)
     }
     
     private func prepareSearchController() {
@@ -118,6 +132,25 @@ class MainViewController: UIViewController {
                     DispatchQueue.main.async {
                         self.tableView.reloadData()
                     }
+                }
+            case .failure(let error):
+                print(error.localizedDescription)
+            }
+        }
+    }
+    
+    private func fetchAvailableCurrency() {
+        
+        let headers: HTTPHeaders = ["x-rapidapi-host": "currency-converter5.p.rapidapi.com",
+                                    "x-rapidapi-key" : "5149ae2853msh263c0299a79f836p1b75acjsn9841e9ac2704"]
+        
+        NetworkManager.shared.requestApi(stringURL: "https://currency-converter5.p.rapidapi.com/currency/list?format=json", method: .GET, headers: headers) { (result) in
+            switch result {
+            case .success(let data):
+                guard let data = data else { return }
+                if let currencyArray = NetworkHelpers.shared.parseAvailableCurrency(data) {
+                    self.availableCurrency = currencyArray
+                    self.goToCurrencyConverter()
                 }
             case .failure(let error):
                 print(error.localizedDescription)

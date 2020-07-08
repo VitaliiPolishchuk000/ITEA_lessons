@@ -59,4 +59,33 @@ class NetworkHelpers {
         }
         return nil
     }
+    
+    func parseAvailableCurrency(_ data: Data) -> Currency? {
+        do {
+            let avalibleCurrency = try JSONDecoder().decode(Currency.self, from: data)
+            return avalibleCurrency
+        } catch {
+            print(error.localizedDescription)
+        }
+        return nil
+    }
+    
+    func parseConvertedCurrency (_ data: Data, codingKey: String) -> String? {
+        var amount = ""
+        do {
+             if let json = try JSONSerialization.jsonObject(with: data, options: []) as? [String: Any] {
+                if let rates = json["rates"] as? [String: [String: String]] {
+                    if let currency = rates["\(codingKey)"] {
+                        if let rateForAmount = currency["rate_for_amount"] {
+                            amount = rateForAmount
+                        }
+                    }
+                }
+             }
+        } catch {
+                debugPrint(error)
+        }
+        return amount
+    }
+    
 }

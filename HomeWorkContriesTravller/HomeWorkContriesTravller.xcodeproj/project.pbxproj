@@ -38,6 +38,8 @@
 		FA9B171B24ADFB5900DCEF23 /* CountryTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FA9B171924ADFB5900DCEF23 /* CountryTableViewCell.xib */; };
 		FA9B171C24ADFB5900DCEF23 /* CountryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA9B171A24ADFB5900DCEF23 /* CountryTableViewCell.swift */; };
 		FA9B171E24AE1B6C00DCEF23 /* TranslatedImageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA9B171D24AE1B6C00DCEF23 /* TranslatedImageViewController.swift */; };
+		FACCA7BD24AE52860010E8C4 /* CurrencyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FACCA7BC24AE52860010E8C4 /* CurrencyViewController.swift */; };
+		FACCA7C124B60B8F0010E8C4 /* Currencies.swift in Sources */ = {isa = PBXBuildFile; fileRef = FACCA7C024B60B8F0010E8C4 /* Currencies.swift */; };
 		FAE7788E249A735800C48E97 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAE7788D249A735800C48E97 /* AppDelegate.swift */; };
 		FAE77890249A735800C48E97 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAE7788F249A735800C48E97 /* SceneDelegate.swift */; };
 		FAE77892249A735800C48E97 /* CountryInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAE77891249A735800C48E97 /* CountryInfoViewController.swift */; };
@@ -82,6 +84,8 @@
 		FA9B171924ADFB5900DCEF23 /* CountryTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CountryTableViewCell.xib; sourceTree = "<group>"; };
 		FA9B171A24ADFB5900DCEF23 /* CountryTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CountryTableViewCell.swift; sourceTree = "<group>"; };
 		FA9B171D24AE1B6C00DCEF23 /* TranslatedImageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TranslatedImageViewController.swift; sourceTree = "<group>"; };
+		FACCA7BC24AE52860010E8C4 /* CurrencyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrencyViewController.swift; sourceTree = "<group>"; };
+		FACCA7C024B60B8F0010E8C4 /* Currencies.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Currencies.swift; sourceTree = "<group>"; };
 		FAE7788A249A735800C48E97 /* HomeWorkContriesTravller.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HomeWorkContriesTravller.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FAE7788D249A735800C48E97 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FAE7788F249A735800C48E97 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -188,6 +192,7 @@
 		FA2022F3249A787B00B28417 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				FACCA7C024B60B8F0010E8C4 /* Currencies.swift */,
 				FA2022F4249A787B00B28417 /* User.swift */,
 				FA9B171024ADDBD100DCEF23 /* Contries.swift */,
 			);
@@ -213,6 +218,7 @@
 				FA2022FE249A934500B28417 /* MainViewController.swift */,
 				FAE77891249A735800C48E97 /* CountryInfoViewController.swift */,
 				FA9B171D24AE1B6C00DCEF23 /* TranslatedImageViewController.swift */,
+				FACCA7BC24AE52860010E8C4 /* CurrencyViewController.swift */,
 			);
 			path = Main;
 			sourceTree = "<group>";
@@ -459,6 +465,7 @@
 				FA2022FD249A850800B28417 /* ForgotPassVC.swift in Sources */,
 				FA2C7F5324A7C2B00020BF7C /* FirestoreError.swift in Sources */,
 				FA55B4AA249E7262007F270D /* CustomButton.swift in Sources */,
+				FACCA7C124B60B8F0010E8C4 /* Currencies.swift in Sources */,
 				FAE7788E249A735800C48E97 /* AppDelegate.swift in Sources */,
 				FA2022F0249A779C00B28417 /* ImageViewController.swift in Sources */,
 				FA9B171124ADDBD100DCEF23 /* Contries.swift in Sources */,
@@ -466,6 +473,7 @@
 				FA55B4AB249E7262007F270D /* CustomTextField.swift in Sources */,
 				FA2022EA249A776800B28417 /* Alerts.swift in Sources */,
 				FA2022EB249A776800B28417 /* Validators.swift in Sources */,
+				FACCA7BD24AE52860010E8C4 /* CurrencyViewController.swift in Sources */,
 				FAE77890249A735800C48E97 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
